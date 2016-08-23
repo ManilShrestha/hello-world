@@ -1,0 +1,11 @@
+body{
+    background: rgba(25	5, 249, 255) url("Image/background.png");
+}
+
+.navbar{
+	border-radius: 0;
+}
+
+.navbar-brand{
+	font-family: 'Satisfy',cursive;
+}

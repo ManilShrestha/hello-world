@@ -1,0 +1,23 @@
+{%extends 'Music/base.html'%}
+{% block title%} Album Details {%endblock%}
+
+{% block body%}
+    {%  load staticfiles %}
+<img src="{{ album.album_logo }}" style="width:250px;">
+
+<h2>{{ album.album_title }}</h2>
+<h3>{{ album.artist }}</h3>
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+   {% for song in album.song_set.all %}
+        {{ song.song_title }}
+        {% if song.is_favourite %}
+            <img src="{% static "Music/Image/favicon.ico" %}" height=20/>
+        {% endif %}
+        <br>
+    {% endfor %}
+
+{%endblock%}
